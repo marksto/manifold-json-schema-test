@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: systems.manifold:manifold-all:0.56-alpha">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/systems/manifold/manifold-all/0.56-alpha/manifold-all-0.56-alpha.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/systems/manifold/manifold-all/0.56-alpha/manifold-all-0.56-alpha-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/systems/manifold/manifold-all/0.56-alpha/manifold-all-0.56-alpha-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
