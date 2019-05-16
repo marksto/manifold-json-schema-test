@@ -9,9 +9,11 @@
   <version>1.0.0</version>
   
   <properties>
-    <manifold-version>0.56-alpha</manifold-version>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
+    <manifold-version>0.68-alpha</manifold-version>
+    <java-version>12</java-version>
+
+    <maven.compiler.source>${java-version}</maven.compiler.source>
+    <maven.compiler.target>${java-version}</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   
@@ -31,26 +33,6 @@
     </dependency>
   </dependencies>
 
-  <profiles>
-    <profile>
-      <id>internal.tools-jar</id>
-      <activation>
-        <file>
-          <exists>${java.home}/../lib/tools.jar</exists>
-        </file>
-      </activation>
-      <dependencies>
-        <dependency>
-          <groupId>com.sun</groupId>
-          <artifactId>tools</artifactId>
-          <version>1.8.0</version>
-          <scope>system</scope>
-          <systemPath>${java.home}/../lib/tools.jar</systemPath>
-        </dependency>
-      </dependencies>
-    </profile>
-  </profiles>
-
   <build>
     <plugins>
         <plugin>
@@ -58,10 +40,18 @@
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.8.0</version>
           <configuration>
-            <encoding>UTF-8</encoding>
+            <encoding>${project.build.sourceEncoding}</encoding>
             <compilerArgs>
               <arg>-Xplugin:Manifold</arg>
             </compilerArgs>
+            <!-- Add the processor path for the plugin (required for Java 9+) -->
+            <annotationProcessorPaths>
+              <path>
+                <groupId>systems.manifold</groupId>
+                <artifactId>manifold-all</artifactId>
+                <version>${manifold-version}</version>
+              </path>
+            </annotationProcessorPaths>
           </configuration>
         </plugin>
     </plugins>
