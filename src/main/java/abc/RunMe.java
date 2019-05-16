@@ -28,7 +28,7 @@ public class RunMe {
   }
 
 //  private static void test_Enum_JDK9() {
-//    UnicodeTest enumTest = UnicodeTest.create(UnicodeTest.ind._);
+//    EnumTest enumTest = EnumTest.create(EnumTest.ind._);
 //    System.out.println(enumTest.write().toJson());
 //  }
 
